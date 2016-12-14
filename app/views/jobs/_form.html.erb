@@ -1,0 +1,32 @@
+<div class="row">
+    <%= form_for @job, html: { multipart: true } do |f| %>
+      <div class="row">
+        <div class="input-field col s12 m6 l4">
+          <%= f.text_field :title %>
+          <%= f.label :title %>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <%= f.date_field :date_created %>
+          <%= f.label :date_created, class: 'active' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m6 l4">
+          <%= f.text_area :bio %>
+          <%= f.label :bio %>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <%= f.text_field :employee_creator %>
+          <%= f.label :employee_creator %>
+        </div>
+      </div>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+      <div class="row">
+        <div class="input-field col s12 m6 l4">
+          <%= f.text_field :materials_needed %>
+          <%= f.label :materials_needed %>
+        </div>
+      </div>
+      <%= f.submit nil, class: 'btn blue' %>
+   <% end %>
+</div>

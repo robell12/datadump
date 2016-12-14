@@ -1,0 +1,24 @@
+<nav>
+  <div class="nav-wrapper black">
+    <a href="/"><img id='lable' src="<%= asset_path('pic.jpg') %>"</a>
+    <a href="/" data-activates="mobile-demo" class="button-collapse">
+      <i class="right material-icons">
+        <% if user_signed_in? %>
+          <li id='nav'>
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li id='nav'>
+            <%= link_to 'Login', new_user_session_path %>
+          </li>
+        <% end %>
+      </i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><%= link_to "New", new_job_path %>
+        <li><%= link_to 'Account', edit_user_registration_path %>
+      <% end %>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,4 @@
+<h1><%= @job.title %></h1>
+<% @job.pictures.each do |picture| %>
+  <%= image_tag picture.image.url(:medium) %>
+<% end %>
