@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     put 'users' => 'devise/registrations#update', :as => 'user_registration'
   end
   resources :jobs
+  resources :admin, only: [:index]
 end

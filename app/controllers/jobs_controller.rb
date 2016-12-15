@@ -3,7 +3,8 @@ class JobsController < ApplicationController
   before_action :set_job, except: [:index, :new, :create]
 
 def index
-  @jobs = current_user.jobs.all
+  @jobs = Job.all
+  @jobs = Job.paginate(page: params[:page], per_page: 12)
 end
 
 def show

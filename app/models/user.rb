@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :email
   has_many :jobs
+
+  def is_admin?
+    admin
+  end
 end

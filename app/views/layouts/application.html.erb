@@ -4,6 +4,7 @@
     <title>Datadump</title>
     <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,14 +12,16 @@
   <body>
 
     <%= render(partial: 'layouts/navbar') %>
-
-    <% flash.each do |key, value| %>
-      <div class="flash <%= key %>">
-        <%= value %>
-      </div>
-    <% end %>
-    <div class="container">
-      <%= yield %>
+    <div class='center green lighten-3 close'>
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
     </div>
+    <div class="container">
+        <%= yield %>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   </body>
 </html>

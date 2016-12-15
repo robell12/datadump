@@ -1,2 +1,18 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<div class='row'>
+  <% if @jobs.any? %>
+    <% @jobs.order('created_at DESC').each do |job| %>
+      <div class='col s12 m6 l3 center'>
+        <h3><%= job.title %></h3>
+        <div>
+          <%= link_to 'Show', job_path(job), class: 'btn' %>
+        </div>
+      </div>
+      <% end %>
+  <% else %>
+    <h3>No Jobs, Please Create One!</h3>
+  <% end %>
+</div>
+<br />
+<div class='row center'>
+  <%= will_paginate @jobs %>
+</div>

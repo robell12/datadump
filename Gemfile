@@ -15,9 +15,10 @@ gem 'cancan', '~> 1.6.10'
 gem 'devise', '~> 4.2.0'
 gem 'materialize-sass', '~> 0.97.8'
 gem 'omniauth-facebook', '~> 4.0.0'
-gem 'paginate', '~> 4.0.1'
+gem 'will_paginate', '~> 3.1.0'
 gem 'material_icons', '~> 2.2.0'
 gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2'
 
 
 group :development, :test do
